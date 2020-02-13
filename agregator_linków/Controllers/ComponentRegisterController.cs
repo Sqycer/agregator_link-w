@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace agregator_linków.Controllers
 {
     [Route("api/[controller]")]
-    public class RegisterController : Controller
+    public class ComponentRegisterController : Controller
     {
         private IRepRegistercs repRegisters;
 
-        public RegisterController(IRepRegistercs repRegisters)
+        public ComponentRegisterController(IRepRegistercs repRegisters)
         {
            
             this.repRegisters = repRegisters;

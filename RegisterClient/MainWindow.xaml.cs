@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RegisterClient
+namespace ComponetRegisterClient
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -26,7 +26,7 @@ namespace RegisterClient
         private HttpClient clinet;
         public ObservableCollection<Register> registers { get; set; }
         public Register register { get; set; }
-        private string ApiRout = "api/Register";
+        private string ApiRout = "api/ComponentRegister";
 
         public MainWindow()
         {

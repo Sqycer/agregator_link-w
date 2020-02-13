@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agregator_linków", "agregator_linków\agregator_linków.csproj", "{C36455C8-8C47-44F3-ABD9-5919342D2011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponetRegister", "ComponetRegister\ComponetRegister.csproj", "{15D77711-6AD2-4DC6-8A57-C07420C18A39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponetRegister", "ComponetRegister\ComponetRegister.csproj", "{15D77711-6AD2-4DC6-8A57-C07420C18A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegisterClient", "RegisterClient\RegisterClient.csproj", "{BBCD19A8-F250-42A1-8350-79AD3A642CD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponetRegisterClient", "RegisterClient\ComponetRegisterClient.csproj", "{BBCD19A8-F250-42A1-8350-79AD3A642CD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
