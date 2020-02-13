@@ -10,12 +10,14 @@ namespace agregator_linków.Viewmodel
     public class ViewRegister: IValidatableObject
     {
         [Remote(action: "VerifyEmail", controller: "User")]
-        [Required(ErrorMessage="Pole jest obowiąskowe")]
-        [EmailAddress(ErrorMessage = "Błędny Email")]
+        [Required()]
+        [EmailAddress()]
         public string email { get; set; }
-        [Required(ErrorMessage = "Pole jest obowiąskowe")]
+        [Required()]
+        [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",
+            ErrorMessage = @"Password need UpperCase, LowerCase, Number/SpecialChar and min 8 Chars") ]
         public string password { get; set; }
-        [Required(ErrorMessage = "Pole jest obowiąskowe")]
+        [Required()]
         public string checkpassword { get; set; }
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
@@ -23,7 +25,7 @@ namespace agregator_linków.Viewmodel
             if (password != checkpassword)
             {
                 yield return new ValidationResult(
-                       $"Hasła się nie zgadzają", new[] { "checkpassword" });
+                       $"Passwords do not match", new[] { "checkpassword" });
             }
     }
 

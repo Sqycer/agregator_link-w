@@ -8,10 +8,10 @@ namespace agregator_linków.Viewmodel
 {
     public class ViewLogin
     {
-        [Required(ErrorMessage = "Pole jest obowiąskowe")]
-        [EmailAddress(ErrorMessage = "Błędny login")]
+        [Required()]
+        [EmailAddress()]
       public  string login { get; set; }
-        [Required(ErrorMessage = "Pole jest obowiąskowe")]
+        [Required()]
       public  string password { get; set; }
 
     }
