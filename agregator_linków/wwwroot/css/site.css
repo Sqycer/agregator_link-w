@@ -1,0 +1,271 @@
+﻿body {
+    margin: 0;
+    min-height: 100vh;
+    background: #931919
+}
+
+
+.logo {
+    display: flex;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+
+    .logo img {
+        margin: 20px;
+        width: 100%;
+        min-height: 150px;
+        max-height: 151px;
+    }
+
+ul {
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #FF5733;
+    width: 100%;
+    min-height: 50px;
+    color: white;
+}
+
+
+    .navbar a {
+        text-decoration: none;
+        display:block;
+        color: white;
+    }
+
+        .navbar a:hover {
+            color: yellow;
+        }
+
+.nav-item {
+    display:inline-block;
+    list-style:none;
+    margin :5px;
+    text-transform:uppercase;
+    text-align: center;
+}
+
+.nav-itemr
+{
+    display: inline-block;
+    list-style: none;
+    margin: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    float: right;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
+
+.Link {
+    border: 2px solid #E89E0C;
+    padding: 10px;
+    min-width: 1200px;
+    min-height: 100px;
+    margin: 5px;
+    background-color: #E89E0C;
+    color: #931919;
+    border-radius: 8px;
+}
+
+.site {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hederTitle {
+    color: #931919;
+}
+
+.buttonLike {
+    border: 2px solid #80000B;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #E9000B;
+    color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float:right;
+    margin-top:80px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.Text {
+    color: wheat;
+    width: auto;
+    position: absolute;
+    min-width: 1200px;
+}
+
+.aedit a {
+    display: inline-block;
+    list-style: none;
+    margin:5px;
+    margin-top: 80px;
+    border: 2px solid #80000B;
+    border-radius: 25px;
+    text-align: center;
+    float: right;
+    color: white;
+    height: auto;
+    width: auto;
+    background-color: #E9000B;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+    .aedit a:hover 
+    {
+        color: yellow;
+    }
+
+.text-success {
+    color: springgreen;
+    font-size: 30px;
+}
+
+.Login {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 20px;
+    background-image: linear-gradient(45deg,#E89E0C 50%,#E89E0C);
+    border-radius: 25px;
+    min-height: 150px;
+    width: 400px;
+    height:350px;
+    margin-top:40px;
+    font-size: 30px;
+}
+
+.TextLogin {
+    display: flex;
+    justify-content: center;
+    color: #931919;
+    flex-direction: column;
+}
+
+
+
+
+.Headerform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:20px;
+    font-size:40px;
+    color:red;
+}
+
+
+.buttonLogin
+{
+    border: 2px solid #80000B;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #E9000B;
+    color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 80px;
+    width:200px;
+}
+
+
+.Register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(45deg,#E89E0C 50%,#E89E0C);
+    border-radius: 25px;
+    min-height: 150px;
+    width: 400px;
+    height: 500px;
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+
+.notvalide {
+    color: red;
+    font-size:12px;
+}
+
+.page-item {
+    color: white;
+    list-style: none;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.addahref {
+
+    list-style: none;
+    margin: 5px;
+    border: 2px solid #80000B;
+    border-radius: 25px;
+    text-align: center;
+    float: right;
+    color: white;
+    height: auto;
+    width: 100px;
+    background-color: #FF5733;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    float:left;
+}
+
+.hederTitle
+{
+    color:khaki;
+}
+
+.TextLogin input, input[type="password"], input[type="text"] {
+    background-color: #DAF7A6;
+    color: #931919;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 250px;
+    height: 30px;
+}
+
+.addBlock {
+
+    width: 1200px;
+}
+

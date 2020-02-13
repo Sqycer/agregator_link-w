@@ -1,0 +1,18 @@
+﻿@model agregator_linków.Viewmodel.ViewRegister
+<div class="Register">
+    <form asp-controller="User" asp-action="Register" method="post">
+
+        <div class="Headerform">Reister</div>
+        <div class="TextLogin">
+            <label>Email </label>
+            <input type="text" asp-for="email" />
+            <span class="notvalide" asp-validation-for="email" color="red"></span>
+            <label>Password</label>
+            <input asp-for="password" type="password" />
+            <span  class="notvalide" asp-validation-for="password" color="red"></span>
+            <label>Confirm</label>
+            <input asp-for="checkpassword" type="password" />
+            <span  class="notvalide" asp-validation-for="checkpassword" color="red"></span>
+            <button class="buttonLike" type="submit">Register</button>
+    </form>
+ </div>

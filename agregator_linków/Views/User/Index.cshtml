@@ -1,0 +1,75 @@
+﻿@model IEnumerable<agregator_linków.Viewmodel.ViewIndexLink>
+<span class="text-success">
+    @ViewData["Register"]
+    @if (@ViewData["Register"] != null)
+    {
+        <br />
+    }
+</span>
+
+<h1 class="hederTitle">Your Links</h1>
+<div class="addBlock">
+    @Html.ActionLink("Add Link", "AddLink", "Link", null, new { @class = "addahref" })
+</div>
+@foreach (var elemnet in Model)
+{
+    <div class="Link">
+        <div class="Text">
+
+            <div onclick="RedirecTo('@elemnet.url')" style="float:left; font-size: 20px; color: #931919;">
+                @elemnet.title <div style="font-size:15px">@elemnet.url</div>
+                <p id="likevalue @elemnet.id">
+                    @elemnet.like
+                </p>
+            </div>
+            <div style="float:right">
+                added on @elemnet.time by @elemnet.user
+            </div>
+
+        </div>
+        <div class="aedit">
+            <p>
+
+
+                @Html.ActionLink("Remove", "Remove", "Link", new { id = elemnet.id })
+                @Html.ActionLink("Edit", "EditLink", "Link", new { id = elemnet.id })
+
+            </p>
+        </div>
+
+
+
+    </div>
+
+}
+
+<div>
+
+
+    @if (ViewBag.maxPage > 1)
+    {
+        <span> @Html.ActionLink("<< ", "Index", "User", new { page = --ViewBag.Page }, new { @class = "page-item" })</span>
+        @for (int i = 1; i <= ViewBag.maxPage; i++)
+        {
+
+            <span> @Html.ActionLink(i.ToString(), "Index", "User", new { page = i }, new { @class = "page-item", id = i })</span>
+
+        }
+        <span> @Html.ActionLink(" >>", "Index", "User", new { page = ++ViewBag.Page }, new { @class = "page-item" })</span>
+
+    }
+</div>
+
+
+<script>
+
+       window.onload = function ()
+    {
+           var page = document.getElementById("@ViewBag.page");
+           console.log(page);
+           if (page != this.undefined) {
+               page.style.color = "khaki";
+           }
+    }
+
+</script>

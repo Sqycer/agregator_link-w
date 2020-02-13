@@ -1,0 +1,124 @@
+﻿
+@model IEnumerable<agregator_linków.Viewmodel.ViewIndexLink>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<span class="text-success">
+    @ViewData["Register"]
+    @if (@ViewData["Register"] != null)
+    {
+        <br />
+    }
+</span>
+
+
+
+<h1 class="hederTitle"> ALL Links</h1>
+@foreach (var elemnet in Model)
+{
+
+<div class="Link">
+    <div class="Text">
+
+        <div onclick="RedirecTo('@elemnet.url')" style="float:left; font-size: 20px; color: #931919;">
+            @elemnet.title <div style="font-size:15px">@elemnet.url</div>
+            <p id="likevalue @elemnet.id">
+                @elemnet.like
+            </p>
+        </div>
+        <div style="float:right">
+            added on @elemnet.time by @elemnet.user
+        </div>
+
+    </div>
+
+    <div style="float:right">
+        @if (User.Identity.IsAuthenticated && elemnet.buttonlike != null)
+        {
+            <button id="like @elemnet.id" onclick="like(@elemnet.id)" class="buttonLike" >@elemnet.buttonlike</button>
+        }
+    </div>
+</div>
+
+}
+
+<div>
+    @if (ViewBag.maxPage > 1)
+    {
+        <span> @Html.ActionLink("<< ", "Index", "Link", new { page = ViewBag.Page-1 }, new { @class = "page-item" })</span>
+        @for (int i = 1; i <= ViewBag.maxPage; i++)
+        {
+            <span class="page-item"> @Html.ActionLink(i.ToString(), "Index", "Link", new { page = i }, new { @class = "page-item",id=i})</span>
+
+        }
+        <span> @Html.ActionLink(" >>", "Index", "Link", new { page = ViewBag.Page+1 }, new { @class = "page-item" })</span>
+    }
+</div>
+
+<script>
+
+    window.onload = function ()
+    {
+       var page = document.getElementById("@ViewBag.page");
+           console.log(page);
+           if (page != this.undefined) {
+               page.style.color = "khaki";
+           }
+    }
+
+  function like(id)
+  {
+      console.log(id);
+    $.ajax({
+      type: "POST",
+      url: '@Url.Action("Like", "Link")',
+      data: { linkId: id },
+        success: function (data)
+        {
+            var pLike = document.getElementById("likevalue "+id);
+            var buttonLike = document.getElementById("like "+id);
+            var value = parseInt(pLike.innerHTML)
+            if (data)
+            {
+                value++;
+                pLike.innerHTML = value;
+                buttonLike.innerHTML = "Unlike";
+            }
+            else
+            {
+                 value--;
+                pLike.innerHTML = value;
+                buttonLike.innerHTML = "Like";
+            }
+
+        },
+      error: function() { alert('fail'); }
+      });
+  }
+
+
+    function RedirecTo(url)
+    {
+
+        const reg = /^www/;
+        const reg2 = /^[^www]/;
+        const reg3 = /^https/
+
+        if (reg3.test(url)) {
+            window.open(url);
+        }
+        else if (reg.test(url)) {
+            url = "http://" + url;
+            window.open(url);
+        }
+        else if (reg2.test(url))
+        {
+            url = "http://www." + url;
+            console.log(url);
+            window.open(url);
+        }
+
+    }
+
+</script>

@@ -1,0 +1,20 @@
+﻿@model agregator_linków.Viewmodel.ViewLogin
+
+    <div class="Login">
+        <form asp-controller="User" asp-action="Login" method="post">
+
+            <div class="Headerform">Login</div>          
+            <div class="TextLogin">
+                <label>Email</label>
+                <input  type="text" asp-for="login" />
+                <span class="notvalide" asp-validation-for="login"></span>
+                <label>Password</label>
+                <input  asp-for="password" type="password" />
+                <span class="notvalide" asp-validation-for="password"></span>
+                @Html.ValidationMessage("Errorlogin")
+            </div>
+
+            <button class="buttonLike" type="submit">Login</button>
+
+        </form>
+    </div>

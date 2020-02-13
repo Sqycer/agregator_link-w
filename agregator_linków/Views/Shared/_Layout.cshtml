@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - agregator_linków</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        @*<div class="logo">
+            <img src="~/img/logo.png" />
+        </div>*@
+      
+        <div class="navbar">
+            <ul>
+                <li class="nav-item">@Html.ActionLink("Home", "index", "Link")</li>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+
+                    <li class="nav-item">  @Html.ActionLink("Profile", "Index", "User")</li>
+                    <li class="nav-itemr"> @Html.ActionLink("Logout", "Logout", "User")</li>
+                    <li class="nav-itemr">   <label>Login in @User.Identity.Name</label></li>
+                }
+                else
+                {
+
+                    <li class="nav-item"> @Html.ActionLink("Register", "Register", "User")</li>
+                    <li class="nav-item"> @Html.ActionLink("Login", "Login", "User") </li>
+                }
+
+            </ul>
+            </div>
+
+
+        <div class="site">
+            @RenderBody()
+        </div>
+
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+
+
+
+</html>

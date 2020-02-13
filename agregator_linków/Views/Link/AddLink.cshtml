@@ -1,0 +1,18 @@
+﻿@model agregator_linków.Viewmodel.ViewAddLink
+@{
+    ViewData["Title"] = "AddLink";
+
+}
+    <div class="Login">
+        <form asp-action="AddLink" asp-controller="Link">
+            <div class="TextLogin">
+                <label> Title</label>
+                <input type="text" asp-for="title" />
+                <span asp-validation-for="title"></span>
+                <label> Url</label>
+                <input type="text" asp-for="url" />
+                <span asp-validation-for="url"></span>
+            </div>
+                <button class="buttonLike"  type="submit">Add</button>
+        </form>
+      </div>
